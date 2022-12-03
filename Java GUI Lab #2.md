@@ -2,7 +2,7 @@
 # GUI Lab #2
 
 ### Topics To Be Discussed:
-
+Object 
 1. `setForeground()` Method
 2. `JPasswordField` Class
 3. `JRadioButton` class
@@ -44,7 +44,7 @@ class GUI extends JFrame
 > we created a class that inherits from `JFrame` class
 >, then inside the `constructor` we called some methods that are
 > discussed in previous lab. the only new method here is; 
-````
+````java
 ButtonObject.signup_btn.setForeground(<Object Of Color Class>);
 ````
 > In above example, `signup_btn.setForeground(Color.blue);` we changed the
