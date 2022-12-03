@@ -21,7 +21,7 @@
 
 - Let's continue talking about `JAVA GUI`
 - Let's observe the following code
-````
+````java
 class GUI extends JFrame
 {
     JButton signup_btn = new JButton("Sign Up");
@@ -56,70 +56,68 @@ ButtonObject.signup_btn.setForeground(<Object Of Color Class>);
 
 - to have a text filed that hide the text that is written by the user
 , then create an object from class `JPasswordField` like this
-````
+````java
 JPasswordField passwordField1 = new JPasswordField();
 ````
 > we assume that the layout is `absoulte`, all you have to do is to add this object in `Panel p1` object
-````
+````java
 passwordField1.setBounds(100,50,100,25);
 p1.add(passwordField1);
 ````
 
-````
+````java
 JTextField username_field = new JTextField(10);
 ````
 
 ### - `JRadioButton` class
-````
+````java
 p1.add(male);
 p1.add(female);
 ````
 
-````
-    JRadioButton male = new JRadioButton("Male");
-    JRadioButton female = new JRadioButton("Female");
+````java
+JRadioButton male = new JRadioButton("Male");
+JRadioButton female = new JRadioButton("Female");
 ````
 
 ### - `ButtonGroup` Class
 
-````
+````java
 ButtonGroup group1 = new ButtonGroup();
 ````
 
-````
+````java
 group1.add(male);
 group1.add(female);
 ````
 
 ### - `JCheckBox` Class
 
-````
-    JCheckBox ch1 = new JCheckBox("married");
-    JCheckBox ch2 = new JCheckBox("single");
+````java
+JCheckBox ch1 = new JCheckBox("married");
+JCheckBox ch2 = new JCheckBox("single");
 ````
 > no need for `buttongroup`
 
-````
-        p1.add(ch1);
-        p1.add(ch2);
+````java
+p1.add(ch1);
+p1.add(ch2);
 ````
 
 ### Menu
 
+````java
+JMenu file = new JMenu("file");
+JMenu submenu = new JMenu("submenu");
+JMenuItem menubtn1 = new JMenuItem("edit");
+JMenuItem menubtn2 = new JMenuItem("save");
+JMenuItem menubtn3 = new JMenuItem("close");
+JMenuItem menubtn4 = new JMenuItem("inside sub1");
+JMenuItem menubtn5 = new JMenuItem("inside sub2");
+JMenuBar menu = new JMenuBar();
 ````
 
-    JMenu file = new JMenu("file");
-    JMenu submenu = new JMenu("submenu");
-    JMenuItem menubtn1 = new JMenuItem("edit");
-    JMenuItem menubtn2 = new JMenuItem("save");
-    JMenuItem menubtn3 = new JMenuItem("close");
-    JMenuItem menubtn4 = new JMenuItem("inside sub1");
-    JMenuItem menubtn5 = new JMenuItem("inside sub2");
-    JMenuBar menu = new JMenuBar();
-
-````
-
-````
+````java
   public GUI()
     {
         setTitle("CIC '22");
@@ -153,7 +151,7 @@ group1.add(female);
 
 
 to be able to use `events` in `java GUI` you have to import
-````
+````java
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 ````
@@ -161,7 +159,7 @@ import java.awt.event.ActionListener;
 
 > `ActionEvent` is a class 
 
-````
+````java
 class GUI extends JFrame implements ActionListener
 {
     public GUI()
@@ -199,7 +197,7 @@ class GUI extends JFrame implements ActionListener
 ### Use `inner class` with `Events`
 - this method is used to better organize the code
 
-````
+````java
 class GUI extends JFrame {
     JButton signinBTN;
     public void home() {
@@ -256,7 +254,7 @@ class GUI extends JFrame {
 
 
 ## navigate between `Frames`
-````
+````java
 package GUI;
 
 import javax.swing.*;
@@ -350,7 +348,7 @@ public class Main {
 then go to `file`>`project structure`>`modules`>`dependancies`>press `+` button then choose `JARs` option
 finally navigate to following path: `C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-j-8.0.31.jar` 
 
-````
+````java
 class DB
 {
     private static String name = "root";
@@ -366,7 +364,7 @@ class DB
 ````
 
 
-````
+````java
    public static void main(String args[]) throws SQLException {
 
         DBConnetion db = new DBConnetion();
@@ -381,14 +379,14 @@ class DB
 > Note: must add `throws SQLException`
 
 - to add variables in query statement
-````
- DBConnetion db = new DBConnetion();
-        Connection con = db.Connect();
-        String name = "Ahmed Arafat";
-        String query =  "INSERT INTO photos values (null,'"+name+"',1,'app',null,null)";
-        DBConnetion.stmt = con.prepareStatement(query);
-        //DBConnetion.stmt = con.createStatement();
-        DBConnetion.stmt.execute(query);
+````java
+DBConnetion db = new DBConnetion();
+Connection con = db.Connect();
+String name = "Ahmed Arafat";
+String query =  "INSERT INTO photos values (null,'"+name+"',1,'app',null,null)";
+DBConnetion.stmt = con.prepareStatement(query);
+//DBConnetion.stmt = con.createStatement();
+DBConnetion.stmt.execute(query);
 ````
 > Don't forget you must add string values that are going to be inserted/updated in database in single quote `'string'`
 
@@ -396,6 +394,6 @@ class DB
 & then perform `CRUD` operations on `MySQL DataBase` like `Create`/`Read`/`Update`/`Delete`
 
 ### 10. Show A Message Using `JOptionPane` Class 
-````
+````java
 JOptionPane.showMessageDialog(null,"Username Is Wrong");
 ````

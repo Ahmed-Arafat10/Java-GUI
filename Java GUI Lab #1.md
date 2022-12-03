@@ -38,7 +38,7 @@
 2.1 - Create a class that contains an object from JFrame class
 
 - JFrame Class Methods :
-````
+````java
 class GUI
 {
     JFrame frame1 = new JFrame();
@@ -64,7 +64,7 @@ public class Main {
 
 2.2 - Create a class that INHERITS from JFrame class
 then write your methods in the constructor
-``````
+``````java
 class GUI extends JFrame
 {
     public GUI()
@@ -95,22 +95,22 @@ public class Main {
 
 - To add a new panel to an existing JFrame, create an object
 from ``JPanel`` Class inside your ``GUI`` class
-```` 
+````java
 JPanel panel1 = new JPanel();
 ````
 - Then in the constructor add
-````
+````java
 panel1.setBackground(Color.red); // you gave the color to panel not to JFrame
 add(panel1);
 ````
 - Then create two buttons & one textfield inside Our Class
-````
+````java
 JButton but1 = new JButton("Button1");
 JButton but2 = new JButton("Button2");
 JTextField field1 = new JTextField();
 ````
 - Then to add the previous components
-````
+````java
 add(but1);
 add(but2);
 add(field1);
@@ -120,7 +120,7 @@ add(field1);
   will occupy the WHOLE FRAME
 
 - To prevent this add the following line:
-````
+````java
 // Anonymous Object 
 setLayout(new FlowLayout());
 ````
@@ -130,7 +130,7 @@ line (even the panel itself)
 
 - to solve this I want to add the components to the Panel itself
 not to the frame
-````
+````java
 add(panel1);
 panel1.add(but1);
 panel1.add(but2);
@@ -139,7 +139,7 @@ panel1.add(field1);
 > by default the layout of a `panel` is `Flowlayout`
 
 - To change Layout of a panel from default to `Absolute Layout`
-````
+````java
 panel1.setLayout(null);
 ````
 
@@ -148,7 +148,7 @@ panel1.setLayout(null);
 > Because you must specify both `setLocation()` & `setSize()` FOR EACH COMPONENT
 
 - So, if I'm going to add a `JButton`
-````
+````java
 but1.setLocation(100,100); // set the ABSOLUTE Location
 but1.setSize(100,100);
 add(but1);
@@ -165,11 +165,11 @@ add(but1);
 ### FlowLayout
 
 - first you have to import
-````
+````java
 import java.awt.FlowLayout;
 ````
 - In the `Frame` itself, we will specify its layout then add new components
-````
+````java
 this.setLayout(new FlowLayout());
 add(but1);
 add(but2);
@@ -180,7 +180,7 @@ add(but2);
 > also Note the arrangement of adding each element differs in their order
 
 - You can pass a parameter to the constructor to control its location
-````
+````java
 this.setLayout(new FlowLayout(FlowLayout.LEFT))
 ````
 > Can Pass -> `LEFT`/`CENTER`/`RIGHT`
@@ -188,21 +188,21 @@ this.setLayout(new FlowLayout(FlowLayout.LEFT))
 >Note: Default constructor is `CENTER`
 
 - Also You can add two parameters to the constructor to control its `x` & `y` distance
-````
+````java
 this.setLayout(new FlowLayout(FlowLayout.CENTER,10,30));
 ````
 
 
 ### GridLayout
 - It Separates the `frame`/`panel` into `Raws` & `Columns`
-````
+````java
 this.setLayout(new GridLayout());// will automatically create ONE ROW and as columns as needed
 add(but1);
 add(but2);
 ````
 
 - To specify the `Raws` & `Columns`, pass two parameters to its constructor
-````
+````java
 this.setLayout(new GridLayout(2,3));// will automatically create ONE ROW and as columns as needed
 add(but1);
 add(but2);
@@ -211,7 +211,7 @@ add(but3);
 
 - Also You can add two parameters to the constructor to control its `hgap` & `vgap`
 
-````
+````java
 this.setLayout(new GridLayout(2,3,10,30));// will automatically create ONE ROW and as columns as needed
 add(but1);
 add(but2);
@@ -220,7 +220,7 @@ add(but3);
 - Why `GridLayout` is used?
 - Ans: `GridLayout` is used when you want to set the layout of WHOLE frame, as you may need to separate the frame into multiple panels
 - In the following example we will create a
-````
+````java
 panel1.setBackground(Color.RED);
 panel2.setBackground(Color.BLUE);
 this.setLayout(new GridLayout(2,1));
@@ -235,7 +235,7 @@ panel1.add(but2)
 
 ### BorderLayout
 -  `BorderLayout` used to set `Frame`/`Panel` into `EAST`/`WEST`/`NORTH`/`SOUTH`/`CENTER` Directions
-````
+````java
 setLayout(new BorderLayout());
 add(but1,BorderLayout.EAST);
 add(but2,BorderLayout.WEST);
@@ -243,13 +243,13 @@ add(but2,BorderLayout.WEST);
 > can pass add(but1,BorderLayout.`EAST`/`WEST`/`NORTH`/`SOUTH`/`CENTER`)
 
 - Also You can add two parameters to the constructor to control its `hgap` & `vgap`
-````
+````java
 setLayout(new BorderLayout(10,30));
 ````
 
 ### AbsoluteLayout
 - This will add the components in an `Absolute` position inside the `Frame`/`Panel`
-````
+````java
 setLayout(null);
 but1.setBounds(300,100,100,50);
 add(but1);
