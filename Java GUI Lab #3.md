@@ -56,10 +56,23 @@ class GUI extends JFrame {
   }
   
   public void HomePage() {
-    GUI home = new GUI("Home");
-    home.dispose();
-    welwome();
-  }
+        GUI f1 = new GUI("Home Page");// Our frame
+        JPanel p1 = new JPanel();
+        JButton btn1 = new JButton("Click Me");
+        p1.setBackground(Color.RED);
+        f1.add(p1);
+        p1.add(btn1);
+        btn1.addActionListener((ActionEvent e)->
+        {
+            f1.dispose();
+            SignInPage();
+        });
+    }
+    
+    public void SignInPage()
+    {
+        GUI f1 = new GUI("Sign In Page");// Our frame
+    }
 }
 ````
 > Note: We have created a `constructor` that set basic property of `JFrame`, this style is used rather
