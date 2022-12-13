@@ -228,7 +228,7 @@ class GUI extends JFrame {
         p1.add(signinBTN);
         p1.add(password_field);
         setSize(500, 500);
-        signinBTN.addActionListener(new OurEvents());
+        signinBTN.addActionListener(new InnerEvents());
     }
 
     class InnerEvents implements ActionListener {
