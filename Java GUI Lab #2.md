@@ -231,7 +231,7 @@ class GUI extends JFrame {
         signinBTN.addActionListener(new OurEvents());
     }
 
-    class OurEvents implements ActionListener {
+    class InnerEvents implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == signinBTN) {
