@@ -30,7 +30,7 @@ Or by creating an `Inner Class` that `implemets` it
 ````
 - Or you can use `Anonymous Class` Syntax, like this:
 ````java
-SignInBTN.addActionListener(new AcionListener() {
+SignInBTN.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed (ActionEvent e){
             home.dispose();
