@@ -74,6 +74,13 @@ class GUI extends JFrame {
         GUI f1 = new GUI("Sign In Page");// Our frame
     }
 }
+
+public class Main {
+    public static void main(String args[]) {
+    GUI obj1 = new GUI();
+    obj1.HomePage();
+    }
+}
 ````
 > Note: We have created a `constructor` that set basic property of `JFrame`, this style is used rather
 typing these statements every single time while creating an object from class `JFrame`
