@@ -311,7 +311,7 @@ DBConnetion.stmt.execute(Query);
 ````
 > Don't forget you must add string values that are going to be `inserted`/`updated` in database in single quote `'value'`
 
--  Let's create `Sign In Page` to practice `Insert` command :
+-  Let's create `Sign Up Page` to practice `Insert` command :
 ````java
 class GUI extends JFrame {
     DBConnetion MySQL_DB = new DBConnetion();
