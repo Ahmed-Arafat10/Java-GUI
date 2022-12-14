@@ -303,7 +303,9 @@ public class Main {
 DBConnetion DB = new DBConnetion();
 Connection Con = DB.Connect();
 String Name = "Ahmed Arafat";
-String Query = "INSERT INTO photos values (null,'"+Name+"',1,'app',null,null)";
+String password = "123";
+String email = "ahmed@gmail.com";
+String Query = "INSERT INTO user values (null,'"+Name+"','"+email+"','"+password+"')";
 DBConnetion.stmt = Con.prepareStatement(Query);
 DBConnetion.stmt.execute(Query);
 ````
