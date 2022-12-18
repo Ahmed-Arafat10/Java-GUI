@@ -1,8 +1,17 @@
+# GUI Lab #4 (Final Lab)
+> _**By TA Ahmed Arafat ^-^**_
 
+### Topics To Be Discussed:
+
+1. Create An Update Page To Perform An `Update` Operation in The `Database` 
+2. Create A Delete Page To Perform An `Delete` Operation in The `Database`
+3. View Your Records From The Database in `JTable` object
+
+## 1. Create An Update Page To Perform An `Update` Operation in The `Database`
 
 - Let's see how to update a record (row) that already exists
 in table `user` in `PhpMyAdmin`
-
+- In our `Update` Page :
 ````java
 package GUI;
 
@@ -99,7 +108,7 @@ class GUI extends JFrame {
             else {
                 int ChoosenID = Integer.valueOf(mylist.getSelectedItem().toString());
                 String username = NameField.getText() , password = String.valueOf(PasswordField.getPassword());
-                String Query = "UPDATE `user` set name = '" + username+ "', password = '" + password + "' WHERE ID = '" + ChoosenID + "' ";
+                String Query = "UPDATE `user` SET name = '" + username+ "', password = '" + password + "' WHERE ID = '" + ChoosenID + "' ";
                 System.out.println(Query);
                 try {
                     DBConnetion.stmt = Con.prepareStatement(Query);
@@ -154,7 +163,7 @@ Vector<String> GetIDFromDB() {
 > The return type of `GetIDFromDB()` is `Vector<String>`
 , you can see we didn't return an array as we don't know how many `IDs`
 exist in the `Database`, also we didn't use `ArrayList` as the constructor of `JComboBox` class
-takes `Vector` not `ArrayList`, `Vector` & `ArrayList` are almost same but there are some differences (advanced to till you), What I wan from you is to know we use both when we want to create a `Dynamic Array` & it means when we create it we don't specify a size for that it
+takes `Vector` not `ArrayList`, `Vector` & `ArrayList` are almost same but there are some differences (advanced to till you), What I want from you is to know we use both when we want to create a `Dynamic Array` & it means when we create it we don't specify a size for that it
 
 > Also I have done the following code in a function so that I can call it in any page I want (Global to all pages not for a specific page) 
 
@@ -162,7 +171,7 @@ takes `Vector` not `ArrayList`, `Vector` & `ArrayList` are almost same but there
 change it from `int` to `String` using `String.valueOf()` function
 
 
-### Delete from the `Database`
+## 2. Create A Delete Page To Perform An `Delete` Operation in The `Database`
 
 - The same concept as above code, but different parts is that I want just a `JButton` & a `JComboBox` in the page
 & the other thing is that I will execute the `Delete Statement`
@@ -280,11 +289,14 @@ public class Main {
 ````
 > `mylist.setSelectedItem(null);` to make nothing selected by default in the List
 
-> `String Query = "DELETE FROM user WHERE ID = '" + ChoosenID + "' ";`
+> `String Query = "DELETE FROM user WHERE ID = '" + ChoosenID + "' ";` the delete statement
                
 > Tip: It is a good practicing to name `SQL Keywords` in Uppercase & put table name inside ``
 
-# `Jtable` Class
+## 3. View Your Records From The Database in `JTable` object
+- What we want to perform is to get all records from our Database &
+then show these records in a table, Something like `<table>` tag in `HTML` 
+- Let's see how to add `Statically` a data to a `JTable` object
 ````java
 package GUI;
 
@@ -356,9 +368,9 @@ public class Main {
     }
 }
 ````
-> The problemm here is that we have to get rows Dynamically from `Database`
+> The problem here is that we have to get rows `Dynamically` from `Database`
 
-- To do so we will add `GetTableDataFromDB()` method and change some lines in `HomePage()` method 
+- To do so we will add `GetTableDataFromDB()` method to `Dynamically` get all records that exist in the `Database` and change some lines in `HomePage()` method 
 ````java
 DefaultTableModel GetTableDataFromDB() {
         String[] ColName = {"ID","Name","Password"};
@@ -399,7 +411,6 @@ DefaultTableModel GetTableDataFromDB() {
         p1.add(myScroll);
     }
 ````
-> `DefaultTableModel mytablemodel = GetTableDataFromDB();`
+> `DefaultTableModel mytablemodel = GetTableDataFromDB();` this line is used to create a `TableModel` object
 
-> `mytable.getColumnModel().getColumn(0).setPreferredWidth(100);`
-> 
+> `mytable.getColumnModel().getColumn(0).setPreferredWidth(100);` this line is used to set the width for specific column
